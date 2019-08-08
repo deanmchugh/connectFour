@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {returnSquare} from './GameLogic'
+
 const CELLS_X = 7;
 const CELLS_Y = 6;
 
@@ -11,7 +13,7 @@ const getCells = () => {
 
     for (let x = 0; x < CELLS_X; x++) {
       cells.push(
-        <div className="Cell" key={`${y}-${x}`} />
+        <div className="Cell" key={`${y}-${x}`} id={`${y}${x}`} onClick={returnSquare}/>
       );
     }
 
@@ -21,7 +23,6 @@ const getCells = () => {
       </div>
     );
   }
-
   return rows;
 };
 
