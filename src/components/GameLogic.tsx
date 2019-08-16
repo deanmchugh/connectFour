@@ -1,4 +1,6 @@
 let playerOneSquares: any = []
+let playerTwoSquares: any = []
+let player = 1
 const BOTTOMROW = 5
 const CONNNECTED = 5
 
@@ -30,22 +32,17 @@ const validSquare = (target: string) => {
 }
 
 const hasWon = (xcood: number, ycood: number) => {
-    let hosPlus = 1, hosMin = 1, verPlus = 1, verMin = 1
-    let diaRighPlus = 1, diaRighMin = 1
-    let diaLeftPlus = 1, diaLeftMin = 1 
+    let hosPlus = 1, hosMin = 1, verPlus = 1
+    let diaRighPlus = 1, diaLeftPlus = 1
     for (let i = 1; i < CONNNECTED; i++){
         if (searchArray(xcood + i, ycood)) hosPlus = hosPlus + 1 
         if (searchArray(xcood - i, ycood)) hosMin = hosMin + 1
-        if (searchArray(xcood, ycood - i)) verMin = verMin + 1
         if (searchArray(xcood, ycood + i)) verPlus = verPlus + 1
         if (searchArray(xcood - i, ycood + i)) diaRighPlus = diaRighPlus + 1
-        if (searchArray(xcood - i, ycood - i)) diaRighMin = diaRighMin + 1 
         if (searchArray(xcood + i, ycood + i)) diaLeftPlus = diaLeftPlus + 1
-        if (searchArray(xcood + i, ycood - i)) diaLeftMin = diaLeftMin + 1
     }
-    if (hosPlus === 4 || hosMin === 4 || verPlus === 4 || verMin === 4 ||
-        diaRighPlus === 4 || diaRighMin === 4 ||
-        diaLeftPlus === 4 || diaLeftMin === 4 ){
+    if (hosPlus === 4 || hosMin === 4 || verPlus === 4 ||
+        diaRighPlus === 4 || diaLeftPlus === 4){
             window.alert("YOU WON!!")
     }
     

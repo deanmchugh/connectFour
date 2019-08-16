@@ -54,12 +54,7 @@ body {
       height: $size;
       background: #333;
       margin: 0.1rem;
-      .CellPlayerOne {
-        background: red;
-      }
-      .CellPlayerTwo {
-        background: blue;
-      }
+      border-radius: 50%;
     }
   }
 }

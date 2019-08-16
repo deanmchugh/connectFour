@@ -1,9 +1,13 @@
 import React from 'react';
 
-import {returnSquare} from './GameLogic'
+import { returnSquare } from './GameLogic'
 
 const CELLS_X = 7;
 const CELLS_Y = 6;
+
+interface Props {
+  nextTurn: () => void;
+}
 
 const getCells = () => {
   const rows = [];
