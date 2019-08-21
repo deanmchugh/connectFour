@@ -35,16 +35,9 @@ interface Props {
 }
 
 const Board = ({ nextTurn }: Props) => (
-  <>
-    <div className="Board">
+    <div className="Board" onClick={nextTurn}>
       {getCells()}
     </div>
-
-    {/* This is for logic demonstration only */}
-    <button className="NextTurn" onClick={nextTurn}>
-      next turn
-    </button>
-  </>
 );
 
 export default Board;

@@ -46,6 +46,9 @@ body {
 
 .Board {
   margin: 3rem auto 0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: blue;
   .Row {
     display: flex;
     .Cell {
@@ -53,7 +56,8 @@ body {
       width: $size;
       height: $size;
       background: #333;
-      margin: 0.1rem;
+      margin: 0.2rem;
+      border: 1px solid white;
       border-radius: 50%;
     }
   }
