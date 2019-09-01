@@ -29,6 +29,7 @@ const validSquare = (target: string) => {
             searchArray(xcood, ycood + 1, 2) || 
             ycood === BOTTOMROW) {
             playerSquares.push([xcood, ycood, player])
+            hasWon(xcood, ycood) 
             player === 1 ? player = 2 : player = 1
             return true
         }
@@ -48,16 +49,15 @@ const hasWon = (xcood: number, ycood: number) => {
     if (hosPlus === 4 || hosMin === 4 || verPlus === 4 ||
         diaRighPlus === 4 || diaLeftPlus === 4){
             window.alert("PLAYER " + player + " WON!!")
+            history.go(0)
     }
 }
 
 export const returnSquare = (event: { target: any; }) => {
     const targetId = event.target.id
     const square = document.getElementById(targetId)
-    const {xcood, ycood} = coordsToInt(targetId)
     if (validSquare(targetId)) {
         player === 1 ? square.style.background = "red" : square.style.background = "yellow"
     } 
-    hasWon(xcood, ycood) 
 }
 
